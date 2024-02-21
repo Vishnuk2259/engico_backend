@@ -36,3 +36,6 @@ class Banner(BaseModel):
     file = models.CharField(max_length=255, null = True, blank = True)
     file_type = models.CharField(max_length=50, null = True, blank = True)
     title = models.CharField(max_length=255, null = True, blank = True)
+    
+    def __str__(self):
+        return f"{self.content} , {self.id}"

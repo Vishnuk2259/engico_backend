@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework_simplejwt import views as jwt_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +28,5 @@ urlpatterns = [
     path('api/banner/', include('banner.urls')),
     path('api/products/', include('products.urls')),
     path('api/services/', include('services.urls')),
-]
+    path('', include('pages.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

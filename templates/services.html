@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Engiqo - Produtcs & Services</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'img/logo.png' %}" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/main.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  
+
+  <header id="header" class="header d-flex align-items-center">
+
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="http://127.0.0.1:8000/" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <!-- <h1>Engiqo<span>.</span></h1> -->
+        <img src="{% static 'img/logo.png' %}">
+      </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="">Login/Sign Up</a></li>
+          <li class="dropdown dropmenu"><a href="#"><span></span> <i class="fa fa-bars"></i></a>
+            <ul>
+              <li><a href="http://127.0.0.1:8000/">Home</a></li>
+              <li><a href="http://127.0.0.1:8000/about-us">About Us</a></li>
+              <li><a href="http://127.0.0.1:8000/services/">Products & Services</a></li>
+              <li><a href="http://127.0.0.1:8000/tools/">Tools</a></li>
+            </ul>
+          </li>
+          <li class="dropmenumob"><a href="http://127.0.0.1:8000/">Home</a></li>
+          <li class="dropmenumob"><a href="http://127.0.0.1:8000/about-us/">About Us</a></li>
+          <li class="dropmenumob"><a href="http://127.0.0.1:8000/services/">Products & Services</a></li>
+          <li class="dropmenumob"><a href="http://127.0.0.1:8000/tools/">Tools</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+  </header><!-- End Header -->
+  <!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+      <div class="page-header d-flex align-items-center" data-aos="fade-in">
+        <div class="container position-relative">
+          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
+            <h2>SOURCE FOR <br> WORLD POWER</h2>
+            <div class="d-flex justify-content-center justify-content-lg-start">
+              <a href="#about" class="btn-get-started">Know More <i class="fa fa-arrow-right"></i></a>
+              <!-- <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
+            </div>
+        </div>
+        </div>
+      </div>
+      <nav>
+        <div class="container">
+          <ol>
+            <li><a href="http://127.0.0.1:8000/">Home</a></li>
+            <li>Blog</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Breadcrumbs -->
+
+    <section class="">
+      <div class="container">
+          <div class="service" data-aos="fade-up">
+        <div class="row">
+
+            <div class="col-md-6 serviceimgright">
+              <img src="{% static 'img/brands.jpg' %}" width="100%">
+            </div>
+            <div class="col-md-6 servicetext">
+              <h1>Brands</h1>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+              <a href="#about" class="btn-get-service">Know More <i class="fa fa-arrow-right"></i></a>
+            </div>
+
+              <div class="col-md-6 servicetext">
+                <h1>Capabilities</h1>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                <a href="#about" class="btn-get-service">Know More <i class="fa fa-arrow-right"></i></a>
+              </div>
+              <div class="col-md-6 serviceimgleft">
+                <img src="{% static 'img/capabilities.jpg' %}" width="100%">
+            </div>
+
+            <div class="col-md-6 serviceimgright">
+              <img src="{% static 'img/library.jpg' %}" width="100%">
+            </div>
+            <div class="col-md-6 servicetext">
+              <h1>Document Library</h1>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+              <a href="#about" class="btn-get-service">Know More <i class="fa fa-arrow-right"></i></a>
+            </div>
+
+              <div class="col-md-6 servicetext">
+                <h1>Patents</h1>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                <a href="#about" class="btn-get-service">Know More <i class="fa fa-arrow-right"></i></a>
+              </div>
+              <div class="col-md-6 serviceimgleft">
+                <img src="{% static 'img/patents.jpg' %}" width="100%">
+            </div>
+
+            <div class="col-md-6 serviceimgright">
+              <img src="{% static 'img/tools.jpg' %}" width="100%">
+            </div>
+            <div class="col-md-6 servicetext">
+              <h1>Tools</h1>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+              <a href="#about" class="btn-get-service">Know More <i class="fa fa-arrow-right"></i></a>
+            </div>
+
+              <div class="col-md-6 servicetext">
+                <h1>Training</h1>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                <a href="#about" class="btn-get-service">Know More <i class="fa fa-arrow-right"></i></a>
+              </div>
+              <div class="col-md-6 serviceimgleft">
+                <img src="{% static 'img/training.jpg' %}" width="100%">
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="">
+      <div class="row">
+        <div class="col-lg-4 col-md-12 footer-info">
+          <img src="{% static 'img/logo.png' %}" width="30%">
+          <p>Call Us Today</p>
+          <a href="">+1 634 7638 654</a>
+          <div class="social-links d-flex mt-4">
+            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>About Us</h4>
+          <ul>
+            <li><a href="#">Industry</a></li>
+            <li><a href="#">Updates</a></li>
+            <li><a href="#">Our Projects</a></li>
+            <li><a href="#">Business Units</a></li>
+            <li><a href="#">Contacts</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Products & Services</h4>
+          <ul>
+            <li><a href="#">Brands</a></li>
+            <li><a href="#">Capabilities</a></li>
+            <li><a href="#">Document Library</a></li>
+            <li><a href="#">Patents</a></li>
+            <li><a href="http://127.0.0.1:8000/tools/">Tools</a></li>
+            <li><a href="#">Training</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Investors</h4>
+          <ul>
+            <li><a href="#">Annual Reports</a></li>
+            <li><a href="#">Company Overview</a></li>
+            <li><a href="#">Corporate Governance</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Quarterly results</a></li>
+            <li><a href="#">SFC Fillings</a></li>
+            <li><a href="#">Shareholders information</a></li>
+            <li><a href="#">Srtock information</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container mt-4">
+    </div>
+
+  </footer>
+  <div class="container base">
+    <div class="row">
+      <div class="col-md-8">
+        <ul>
+            <li><a href="">Privacy Policy</a></li>
+            <li><a href="">Terms Of Use</a></li>
+            <li><a href="">Policies</a></li>
+            <li><a href="">Trust Center</a></li>
+            <li><a href="">Media kit</a></li>
+          </ul>
+      </div>
+      <div class="col-md-4">
+        <p>TERNUZ</p>
+      </div>
+    </div>
+  </div>
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

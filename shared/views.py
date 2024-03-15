@@ -65,7 +65,7 @@ class CategoryUserListView(generics.ListAPIView):
 class BrandAdminListView(generics.ListCreateAPIView):
     permission_classes = [IsAuthenticated, IsAdminOrReadOnly]
     queryset = Brand.objects.all()
-    serializer_class = BrandSerializer   
+    serializer_class = BrandSerializer 
     
 class BrandAdminDetailView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsAuthenticated, IsAdminOrReadOnly]

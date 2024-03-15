@@ -30,10 +30,10 @@ class BaseModel(models.Model):
         return super(BaseModel, self).save(*args, **kwargs)
 
 class Settings(BaseModel):
-    social_links = models.TextField(null = True, blank = True)
-    privacy = models.TextField(null = True, blank = True)
-    terms_and_conditions = models.TextField(null = True, blank = True)
-    policy = models.TextField(null = True, blank = True)
+    social_links = models.TextField(max_length = 255, null = True, blank = True)
+    privacy = models.TextField(max_length = 255, null = True, blank = True)
+    terms_and_conditions = models.TextField(max_length = 255, null = True, blank = True)
+    policy = models.TextField(max_length = 255, null = True, blank = True)
     
     def __str__(self):
         return "Settings"
@@ -41,13 +41,13 @@ class Settings(BaseModel):
 
 class ContactUs(BaseModel):
     first_name = models.CharField(max_length = 255)
-    last_name = models.CharField(max_length = 255)
+    last_name = models.CharField(max_length = 255, null = True, blank = True)
     email = models.CharField(max_length = 255)
-    country = models.CharField(max_length = 255)
+    country = models.CharField(max_length = 255, null = True, blank = True)
     subject = models.CharField(max_length = 255)
     company_name = models.CharField(max_length = 255, null = True, blank = True)
     job_title = models.CharField(max_length = 255, null = True, blank = True)
-    comments = models.TextField()
+    comments = models.TextField(max_length = 500, null = True, blank = True)
     submitted_at = models.DateTimeField(auto_now_add = True)
 
     def __str__(self):
@@ -56,7 +56,7 @@ class ContactUs(BaseModel):
     
 class Category(BaseModel):
     name = models.CharField(max_length = 255, unique = True)
-    description = models.TextField(null = True, blank = True)
+    description = models.TextField(max_length = 500, null = True, blank = True)
     parent = models.ForeignKey('self', on_delete = models.CASCADE, null = True, blank = True, related_name = 'subcategories')
 
     def __str__(self):
@@ -64,7 +64,7 @@ class Category(BaseModel):
 
 class Brand(BaseModel):
     name = models.CharField(max_length = 255, unique = True)
-    description = models.TextField(null = True, blank = True)
+    description = models.TextField(max_length = 500, null = True, blank = True)
     parent_brand = models.ForeignKey('self', on_delete = models.CASCADE, null = True, blank = True, related_name = 'subbrands')
 
     def __str__(self):

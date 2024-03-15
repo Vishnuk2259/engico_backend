@@ -28,7 +28,7 @@ class SettingsAdminDetailView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = SettingsSerializer
     
 class SettingsUserListView(generics.ListAPIView):
-    permission_classes = [IsAuthenticated, IsAdminOrReadOnly]
+    permission_classes = [IsAdminOrReadOnly]
     queryset = Settings.objects.all()
     serializer_class = SettingsSerializer
     
@@ -42,8 +42,8 @@ class ContactUsAdminDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = ContactUs.objects.all()
     serializer_class = ContactUsSerializer
     
-class ContactUsUserListView(generics.ListCreateAPIView):
-    permission_classes = [IsAuthenticated, IsAdminOrReadOnly ]
+class ContactUsUserListView(generics.CreateAPIView):
+    permission_classes = [IsAdminOrReadOnly]
     queryset = ContactUs.objects.all()
     serializer_class = ContactUsSerializer
     
@@ -58,7 +58,7 @@ class CategoryAdminDetailView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = CategorySerializer
     
 class CategoryUserListView(generics.ListAPIView):
-    permission_classes = [IsAuthenticated, IsAdminOrReadOnly]
+    permission_classes = [IsAdminOrReadOnly]
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
     
@@ -73,6 +73,6 @@ class BrandAdminDetailView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = BrandSerializer
     
 class BrandUserListView(generics.ListAPIView):
-    permission_classes = [IsAuthenticated, IsAdminOrReadOnly]
+    permission_classes = [IsAdminOrReadOnly]
     queryset = Brand.objects.all()
     serializer_class = BrandSerializer

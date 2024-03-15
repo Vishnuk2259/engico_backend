@@ -30,7 +30,10 @@ class BaseModel(models.Model):
         return super(BaseModel, self).save(*args, **kwargs)
 
 class Settings(BaseModel):
-    social_links = models.TextField(max_length = 255, null = True, blank = True)
+    twitter_link = models.CharField(max_length = 255, null = True, blank = True)
+    facebook_link = models.CharField(max_length = 255, null = True, blank = True)
+    instagram_link = models.CharField(max_length = 255, null = True, blank = True)
+    linkedin_link = models.CharField(max_length = 255, null = True, blank = True)
     privacy = models.TextField(max_length = 255, null = True, blank = True)
     terms_and_conditions = models.TextField(max_length = 255, null = True, blank = True)
     policy = models.TextField(max_length = 255, null = True, blank = True)

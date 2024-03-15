@@ -37,7 +37,7 @@
   <header id="header" class="header d-flex align-items-center">
 
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <a href="http://127.0.0.1:8000/" class="logo d-flex align-items-center">
+      <a href="{% url 'index' %}" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
         <!-- <h1>Engiqo<span>.</span></h1> -->
@@ -48,16 +48,16 @@
           <li><a href="">Login/Sign Up</a></li>
           <li class="dropdown dropmenu"><a href="#"><span></span> <i class="fa fa-bars"></i></a>
             <ul>
-              <li><a href="http://127.0.0.1:8000/">Home</a></li>
-              <li><a href="http://127.0.0.1:8000/about-us/">About Us</a></li>
-              <li><a href="http://127.0.0.1:8000/services/">Products & Services</a></li>
-              <li><a href="http://127.0.0.1:8000/tools/">Tools</a></li>
+              <li><a href="{% url 'index' %}">Home</a></li>
+              <li><a href="{% url 'about-us' %}">About Us</a></li>
+              <li><a href="{% url 'services' %}">Products & Services</a></li>
+              <li><a href="{% url 'tools' %}">Tools</a></li>
             </ul>
           </li>
-          <li class="dropmenumob"><a href="http://127.0.0.1:8000/">Home</a></li>
-          <li class="dropmenumob"><a href="http://127.0.0.1:8000/about-us/">About Us</a></li>
-          <li class="dropmenumob"><a href="http://127.0.0.1:8000/services/">Products & Services</a></li>
-          <li class="dropmenumob"><a href="http://127.0.0.1:8000/tools/">Tools</a></li>
+          <li class="dropmenumob"><a href="{% url 'index' %}">Home</a></li>
+          <li class="dropmenumob"><a href="{% url 'about-us' %}">About Us</a></li>
+          <li class="dropmenumob"><a href="{% url 'services' %}">Products & Services</a></li>
+          <li class="dropmenumob"><a href="{% url 'tools' %}">Tools</a></li>
         </ul>
       </nav><!-- .navbar -->
 
@@ -214,10 +214,14 @@
           <p>Call Us Today</p>
           <a href="">+1 634 7638 654</a>
           <div class="social-links d-flex mt-4">
-            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+            <!-- <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
             <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
             <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a> -->
+            <a href="{{ social_links.twitter_link }}" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="{{ social_links.facebook_link }}" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="{{ social_links.instagram_link }}" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="{{ social_links.linkedin_link }}" class="linkedin"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
 
@@ -239,7 +243,7 @@
             <li><a href="#">Capabilities</a></li>
             <li><a href="#">Document Library</a></li>
             <li><a href="#">Patents</a></li>
-            <li><a href="http://127.0.0.1:8000/tools/">Tools</a></li>
+            <li><a href="{% url 'tools' %}">Tools</a></li>
             <li><a href="#">Training</a></li>
           </ul>
         </div>

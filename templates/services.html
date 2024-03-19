@@ -102,57 +102,57 @@
         <div class="row">
 
             <div class="col-md-6 serviceimgright">
-              <img src="{% static 'img/brands.jpg' %}" width="100%">
+              <img src="{{ brands.file.url }}" width="100%">
             </div>
             <div class="col-md-6 servicetext">
               <h1>Brands</h1>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+              <p>{{ brands.content }}</p>
               <a href="#about" class="btn-get-service">Know More <i class="fa fa-arrow-right"></i></a>
             </div>
 
               <div class="col-md-6 servicetext">
                 <h1>Capabilities</h1>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                <p>{{ capabilities.content }}</p>
                 <a href="#about" class="btn-get-service">Know More <i class="fa fa-arrow-right"></i></a>
               </div>
               <div class="col-md-6 serviceimgleft">
-                <img src="{% static 'img/capabilities.jpg' %}" width="100%">
+                <img src="{{ capabilities.file.url }}" width="100%">
             </div>
 
             <div class="col-md-6 serviceimgright">
-              <img src="{% static 'img/library.jpg' %}" width="100%">
+              <img src="{{ document_library.file.url }}" width="100%">
             </div>
             <div class="col-md-6 servicetext">
               <h1>Document Library</h1>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+              <p>{{ document_library.content }}</p>
               <a href="#about" class="btn-get-service">Know More <i class="fa fa-arrow-right"></i></a>
             </div>
 
               <div class="col-md-6 servicetext">
                 <h1>Patents</h1>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                <p>{{ patents.content }}</p>
                 <a href="#about" class="btn-get-service">Know More <i class="fa fa-arrow-right"></i></a>
               </div>
               <div class="col-md-6 serviceimgleft">
-                <img src="{% static 'img/patents.jpg' %}" width="100%">
+                <img src="{{ patents.file.url }}" width="100%">
             </div>
 
             <div class="col-md-6 serviceimgright">
-              <img src="{% static 'img/tools.jpg' %}" width="100%">
+              <img src="{{ tools.file.url }}" width="100%">
             </div>
             <div class="col-md-6 servicetext">
               <h1>Tools</h1>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+              <p>{{ tools.content }}</p>
               <a href="#about" class="btn-get-service">Know More <i class="fa fa-arrow-right"></i></a>
             </div>
 
               <div class="col-md-6 servicetext">
                 <h1>Training</h1>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                <p>{{ trainings.content }}</p>
                 <a href="#about" class="btn-get-service">Know More <i class="fa fa-arrow-right"></i></a>
               </div>
               <div class="col-md-6 serviceimgleft">
-                <img src="{% static 'img/training.jpg' %}" width="100%">
+                <img src="{{ trainings.file.url }}" width="100%">
             </div>
 
 

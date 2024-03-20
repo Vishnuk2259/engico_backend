@@ -7,11 +7,13 @@ from shared.models import Brand
 from shared.models import Category
 from services.models import Service
 from shared.models import BaseModel
+from tools.models import Tools
 
 class Product(BaseModel):
     brand = models.ForeignKey(Brand, on_delete = models.CASCADE, null = True, blank = True)
     category = models.ForeignKey(Category, on_delete = models.CASCADE, null = True, blank = True)
     service = models.ForeignKey(Service, on_delete = models.CASCADE, null = True, blank = True)
+    tool = models.ForeignKey(Tools, on_delete = models.CASCADE, null = True, blank = True)
     product_title = models.CharField(max_length = 255, null = True, blank = True)
     subtitle = models.CharField(max_length = 255, null = True, blank = True)
     description = models.TextField(max_length = 500, null = True, blank = True)

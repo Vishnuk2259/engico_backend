@@ -30,6 +30,7 @@ class BaseModel(models.Model):
         return super(BaseModel, self).save(*args, **kwargs)
 
 class Settings(BaseModel):
+    phone = models.TextField(max_length = 255, null = True, blank = True)
     twitter_link = models.CharField(max_length = 255, null = True, blank = True)
     facebook_link = models.CharField(max_length = 255, null = True, blank = True)
     instagram_link = models.CharField(max_length = 255, null = True, blank = True)

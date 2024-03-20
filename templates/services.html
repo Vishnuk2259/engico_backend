@@ -55,12 +55,14 @@
               <li><a href="{% url 'about-us' %}">About Us</a></li>
               <li><a href="{% url 'services' %}">Products & Services</a></li>
               <li><a href="{% url 'tools' %}">Tools</a></li>
+              <li><a href="{% url 'products' %}">Products</a></li>
             </ul>
           </li>
           <li class="dropmenumob"><a href="{% url 'index' %}">Home</a></li>
           <li class="dropmenumob"><a href="{% url 'about-us' %}">About Us</a></li>
           <li class="dropmenumob"><a href="{% url 'services' %}">Products & Services</a></li>
           <li class="dropmenumob"><a href="{% url 'tools' %}">Tools</a></li>
+          <li class="dropmenumob"><a href="{% url 'products' %}">Products</a></li>
         </ul>
       </nav><!-- .navbar -->
 
@@ -77,13 +79,22 @@
     <div class="breadcrumbs">
       <div class="page-header d-flex align-items-center" data-aos="fade-in">
         <div class="container position-relative">
+          {% if hero_banner %}
+          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
+            <h2>{{ hero_banner.content }}</h2>
+            <div class="d-flex justify-content-center justify-content-lg-start">
+              <a href="#about" class="btn-get-started">Know More <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+          {% else %}
+          <!-- Fallback content if no data is available -->
           <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
             <h2>SOURCE FOR <br> WORLD POWER</h2>
             <div class="d-flex justify-content-center justify-content-lg-start">
               <a href="#about" class="btn-get-started">Know More <i class="fa fa-arrow-right"></i></a>
-              <!-- <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
             </div>
-        </div>
+          </div>
+          {% endif %}
         </div>
       </div>
       <nav>
@@ -95,6 +106,7 @@
         </div>
       </nav>
     </div><!-- End Breadcrumbs -->
+
 
     <section class="">
       <div class="container">
@@ -171,12 +183,8 @@
         <div class="col-lg-4 col-md-12 footer-info">
           <img src="{% static 'img/logo.png' %}" width="30%">
           <p>Call Us Today</p>
-          <a href="">+1 634 7638 654</a>
+          <a href="">{{ social_links.phone }}</a>
           <div class="social-links d-flex mt-4">
-            <!-- <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a> -->
             <a href="{{ social_links.twitter_link }}" class="twitter"><i class="bi bi-twitter"></i></a>
             <a href="{{ social_links.facebook_link }}" class="facebook"><i class="bi bi-facebook"></i></a>
             <a href="{{ social_links.instagram_link }}" class="instagram"><i class="bi bi-instagram"></i></a>

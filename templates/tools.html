@@ -55,12 +55,14 @@
               <li><a href="{% url 'about-us' %}">About Us</a></li>
               <li><a href="{% url 'services' %}">Products & Services</a></li>
               <li><a href="{% url 'tools' %}">Tools</a></li>
+              <li><a href="{% url 'products' %}">Products</a></li>
             </ul>
           </li>
           <li class="dropmenumob"><a href="{% url 'index' %}">Home</a></li>
           <li class="dropmenumob"><a href="{% url 'about-us' %}">About Us</a></li>
           <li class="dropmenumob"><a href="{% url 'services' %}">Products & Services</a></li>
-          <li class="dropmenumob"><a href="tools">Tools</a></li>
+          <li class="dropmenumob"><a href="{% url 'tools' %}">Tools</a></li>
+          <li class="dropmenumob"><a href="{% url 'products' %}">Products</a></li>
         </ul>
       </nav><!-- .navbar -->
 
@@ -95,98 +97,37 @@
         </nav>
       </div><!-- End Breadcrumbs -->
 
-
       <section class="">
-        <div class="container">
-            <nav data-aos="fade-in">
-              <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                <a class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="nav-home" aria-selected="true">Tool Name</a>
-                <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="nav-profile" aria-selected="false">Tool Name</a>
-                <a class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="nav-contact" aria-selected="false">Tool Name</a>
-                <a class="nav-link " id="nav-home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="nav-home" aria-selected="true">Tool Name</a>
-                <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="nav-profile" aria-selected="false">Tool Name</a>
-                <a class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="nav-contact" aria-selected="false">Tool Name</a>
-                <a class="nav-link " id="nav-home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="nav-home" aria-selected="true">Tool Name</a>
-                <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="nav-profile" aria-selected="false">Tool Name</a>
-                <a class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="nav-contact" aria-selected="false">Tool Name</a>
-                <a class="nav-link " id="nav-home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="nav-home" aria-selected="true">Tool Name</a>
-                <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="nav-profile" aria-selected="false">Tool Name</a>
-                <a class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="nav-contact" aria-selected="false">Tool Name</a>
+          <div class="container">
+              <nav data-aos="fade-in">
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      {% for tool in tools %}
+                      <a class="nav-link {% if forloop.first %}active{% endif %}" id="nav-{{ tool.tool_name|slugify }}-tab" data-bs-toggle="tab" href="#{{ tool.tool_name|slugify }}" role="tab" aria-controls="nav-{{ tool.tool_name|slugify }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}">{{ tool.tool_name }}</a>
+                      {% endfor %}
+                  </div>
+              </nav>
+              <div class="tab-content" id="myTabContent" data-aos="fade-in">
+                  {% for tool in tools %}
+                  <div class="tab-pane fade {% if forloop.first %}show active{% endif %}" id="{{ tool.tool_name|slugify }}" role="tabpanel" aria-labelledby="nav-{{ tool.tool_name|slugify }}-tab">
+                      <h3>{{ tool.tool_name }}</h3>
+                      <img src="{{ tool.file.url }}" width="100%">
+                      <p>{{ tool.content }}</p>
+                      <div class="row">
+                          {% for product in products %}
+                          {% if product.tool_id == tool.id %}
+                          <div class="col-md-4">
+                              <div class="toolsub"style="background: linear-gradient(rgb(1 25 97 / 1%), rgb(1 25 97 / 75%)), url({{ product.meta_image.url }});">
+                                  <h4><a href="">{{ product.product_title }} <i class="fa fa-arrow-right"></i></a></h4>
+                              </div>
+                          </div>
+                          {% endif %}
+                          {% endfor %}
+                      </div>
+                  </div>
+                  {% endfor %}
               </div>
-          </nav>
-          <div class="tab-content" id="myTabContent" data-aos="fade-in">
-              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                <h3>Tool Name</h3>
-                <img src="{% static 'img/toolname.png' %}" width="100%">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                <div class="row">
-                    <div class="col-md-4">
-                      <div class="toolsub" style="background: linear-gradient(rgb(1 25 97 / 1%), rgb(1 25 97 / 75%)), url(/static/img/tool2.jpg) ;">
-                        <h4><a href="">View Product <i class="fa fa-arrow-right"></i></a></h4>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="toolsub" style="background: linear-gradient(rgb(1 25 97 / 1%), rgb(1 25 97 / 75%)), url(/static/img/tool1.jpg) ;">
-                        <h4><a href="">View Product <i class="fa fa-arrow-right"></i></a></h4>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="toolsub" style="background: linear-gradient(rgb(1 25 97 / 1%), rgb(1 25 97 / 75%)), url(/static/img/tool3.jpg) ;">
-                        <h4><a href="">View Product <i class="fa fa-arrow-right"></i></a></h4>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                  <h3>Tool Name</h3>
-                  <img src="{% static 'img/toolname.png' %}" width="100%">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                  <div class="row">
-                      <div class="col-md-4">
-                        <div class="toolsub" style="background: linear-gradient(rgb(1 25 97 / 1%), rgb(1 25 97 / 75%)), url(/static/img/tool2.jpg) ;">
-                          <h4><a href="">View Product <i class="fa fa-arrow-right"></i></a></h4>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="toolsub" style="background: linear-gradient(rgb(1 25 97 / 1%), rgb(1 25 97 / 75%)), url(/static/img/tool1.jpg) ;">
-                          <h4><a href="">View Product <i class="fa fa-arrow-right"></i></a></h4>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="toolsub" style="background: linear-gradient(rgb(1 25 97 / 1%), rgb(1 25 97 / 75%)), url(/static/img/tool3.jpg) ;">
-                          <h4><a href="">View Product <i class="fa fa-arrow-right"></i></a></h4>
-                        </div>
-                      </div>
-                  </div>
-                </div>
-
-                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                  <h3>Tool Name</h3>
-                  <img src="{% static 'img/toolname.png' %}" width="100%">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                  <div class="row">
-                      <div class="col-md-4">
-                        <div class="toolsub" style="background: linear-gradient(rgb(1 25 97 / 1%), rgb(1 25 97 / 75%)), url(/static/img/tool2.jpg) ;">
-                          <h4><a href="">View Product <i class="fa fa-arrow-right"></i></a></h4>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="toolsub" style="background: linear-gradient(rgb(1 25 97 / 1%), rgb(1 25 97 / 75%)), url(/static/img/tool1.jpg) ;">
-                          <h4><a href="">View Product <i class="fa fa-arrow-right"></i></a></h4>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="toolsub" style="background: linear-gradient(rgb(1 25 97 / 1%), rgb(1 25 97 / 75%)), url(/static/img/tool3.jpg) ;">
-                          <h4><a href="">View Product <i class="fa fa-arrow-right"></i></a></h4>
-                        </div>
-                      </div>
-                  </div>
-                </div>
-            </div>
-        </div>
+          </div>
       </section>
-
 
 
   </main><!-- End #main -->
@@ -199,12 +140,8 @@
         <div class="col-lg-4 col-md-12 footer-info">
           <img src="{% static 'img/logo.png' %}" width="30%">
           <p>Call Us Today</p>
-          <a href="">+1 634 7638 654</a>
+          <a href="">{{ social_links.phone }}</a>
           <div class="social-links d-flex mt-4">
-            <!-- <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a> -->
             <a href="{{ social_links.twitter_link }}" class="twitter"><i class="bi bi-twitter"></i></a>
             <a href="{{ social_links.facebook_link }}" class="facebook"><i class="bi bi-facebook"></i></a>
             <a href="{{ social_links.instagram_link }}" class="instagram"><i class="bi bi-instagram"></i></a>

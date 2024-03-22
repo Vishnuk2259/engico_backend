@@ -55,14 +55,12 @@
               <li><a href="{% url 'about-us' %}">About Us</a></li>
               <li><a href="{% url 'services' %}">Products & Services</a></li>
               <li><a href="{% url 'tools' %}">Tools</a></li>
-              <li><a href="{% url 'products' %}">Products</a></li>
             </ul>
           </li>
           <li class="dropmenumob"><a href="{% url 'index' %}">Home</a></li>
           <li class="dropmenumob"><a href="{% url 'about-us' %}">About Us</a></li>
           <li class="dropmenumob"><a href="{% url 'services' %}">Products & Services</a></li>
           <li class="dropmenumob"><a href="{% url 'tools' %}">Tools</a></li>
-          <li class="dropmenumob"><a href="{% url 'products' %}">Products</a></li>
         </ul>
       </nav><!-- .navbar -->
 
@@ -117,7 +115,7 @@
                           {% if product.tool_id == tool.id %}
                           <div class="col-md-4">
                               <div class="toolsub"style="background: linear-gradient(rgb(1 25 97 / 1%), rgb(1 25 97 / 75%)), url({{ product.meta_image.url }});">
-                                  <h4><a href="">{{ product.product_title }} <i class="fa fa-arrow-right"></i></a></h4>
+                                  <h4><a href="{% url 'products' product.id %}">{{ product.product_title }} <i class="fa fa-arrow-right"></i></a></h4>
                               </div>
                           </div>
                           {% endif %}

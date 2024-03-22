@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-&j4ohc^d3fd%hh7ed*((j)&=t4&7_a6eki@i+&7m&lleii%+!3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -88,9 +88,9 @@ WSGI_APPLICATION = 'engico_backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'engico',
-        'USER': 'root',
-        'PASSWORD': 'Geethakumarim@10',
+        'NAME': 'engiqo',
+        'USER': 'engiqoadmin',
+        'PASSWORD': 'Engiqo@123',
         'HOST': 'localhost',
         'PORT': '3306',
     }

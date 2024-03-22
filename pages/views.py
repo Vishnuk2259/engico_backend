@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from shared.models import Settings
 from banner.models import Banner
 from client_feedback.models import Feedback
@@ -40,8 +40,8 @@ def tools(requests):
     social_links = Settings.objects.latest('created_at')
     return render (requests, "tools.html", {'social_links': social_links, 'tools': tools, 'products': products})
 
-def products(requests):
+def products(requests, product_id):
     
-    products = Product.objects.all()
+    product = get_object_or_404(Product, pk = product_id)
     social_links = Settings.objects.latest('created_at')
-    return render (requests, "products.html", {'social_links': social_links, 'products': products})
+    return render (requests, "products.html", {'social_links': social_links, 'product': product})
